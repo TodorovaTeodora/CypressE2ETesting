@@ -1,0 +1,64 @@
+
+it('first test', () => {
+cy.visit('/')
+cy.contains('nb-card', 'Using the Grid').then( firstForm => {
+const emailLabelFirst = firstForm.find('[for="inputEmail1"]').text()
+const passwordLabelFirst = firstForm.find('[for="inputPassword2"]').text()
+expect(emailLabelFirst).to.equal('Email')
+expect(passwordLabelFirst).to.equal('Password')
+
+cy.contains('nb-card', 'Basic form').then( secondForm => {
+    const passwordSecondText = secondForm.find('[for="exampleInputPassword1"]').text()
+    expect(passwordLabelFirst).to.equal(passwordSecondText)
+    cy.wrap(secondForm).find('[for="emailInputPassword1"]').should('contain', 'Password')
+})
+
+})
+
+})
+
+it('invoke command', () => {
+cy.visit('/')
+cy.contains('Forms').click()
+cy.contains('Form Layouts').click()
+
+//1
+cy.get('[for="exampleInputEmail1"]').should('contain', 'Email address')
+
+//2
+cy.get('[for="exampleInputEmail1"]').invoke('text').then( label => {
+    expect(label).to.equal('Email address')
+})
+
+//3
+cy.get('[for="exampleInputEmail1"]').invoke('text').then( text => {
+    expect(text).to.equal('Email address')
+ })
+
+cy.contains('nb-card', 'Basic form')
+   .find('nb-checkbox')
+   .click()
+   .find('.custom-checkbox')
+   .invoke('attr', 'class')
+   .then( classValue => {
+    expect(classValue).to.contain('checked')
+   })
+
+})
+
+it.only('assert property', ()=> {
+cy.visit('/')
+cy.contains('Forms').click()
+cy.contains('Datepicker').click()
+
+//first we find the parent element, then the text and the input field, next we click on the input field to be able to select a sate from the calendar
+cy.contains('nb-card', 'Common Datepicker').find('input').then( input => {
+    cy.wrap(input).click()
+    //below is the locator of the whole calendar field
+    cy.get('nb-calendar-date-picker').contains('17').click()
+    cy.wrap(input).invoke('prop', 'value').should('contain', 'Feb 17 2023')
+
+    })
+
+
+})
