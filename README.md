@@ -2,4 +2,4 @@
 
 This application is used to practice UI Automation with Cypress.
 
-The test files are located in the "cypress" folder.
+The test files are located in the "cypress/e2e" folder.
