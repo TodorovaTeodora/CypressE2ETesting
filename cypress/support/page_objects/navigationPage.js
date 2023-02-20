@@ -11,9 +11,9 @@ function selectGroupMenuItem(groupName) {
 }
 
 export class NavigationPage {
-// we create 5 methods to navigate across differeent pages
+// methods to navigate across different pages
     formLayoutsPage() {
-       selectGroupMenuItem('Form')
+        selectGroupMenuItem('Form')
         cy.contains('Form Layouts').click()
     }
     datepickerPage() {
