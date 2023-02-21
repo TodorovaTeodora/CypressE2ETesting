@@ -1,4 +1,4 @@
-it.only('tooltips', () => {
+it('tooltips', () => {
     cy.visit('/')
     cy.contains('Modal and Overlays').click()
     cy.contains('Tooltip').click()
@@ -11,8 +11,6 @@ it.only('tooltips', () => {
 
 
     //when we click on a dialog botton the dialog box shows up, we find the locator of this box then we click on 
-
-
     //if we delete a row from our smart table a dialog box will show up with a message "Are you sure you want to delete?"
 it('dialog box', () => {
     cy.visit('/')
@@ -31,9 +29,6 @@ it('dialog box', () => {
     cy.get('tbody tr').first().find('.nb-trash').click()
     cy.on('window:confirm', (confirm) => false)
 
-
-
    })
-
 
 })
