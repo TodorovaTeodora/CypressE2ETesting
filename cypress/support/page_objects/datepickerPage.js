@@ -3,12 +3,14 @@ function selectDayFromCurrent(day) {
     let date = new Date()
     date.setDate(date.getDate() + day)
     let futureDay = date.getDate()
+    
+    //date.toLocaleString('default', {month: 'short'}) is used to return the month as a short String:
     let futureMonth = date.toLocaleString('default', {month: 'short'})
     let dateAssert = futureMonth + " " + futureDay + ", " + date.getFullYear()
 
     cy.get('nb-calendar-navigation').invoke('attr', 'ng-reflect-date').then( dateAttribute => {
       
-        //if the month of the future date is not equal the current month, we must click on the small right arrow to find the month
+        //if the month of the future date is not equal to the current month, we must click on the small right arrow to find the future month
        if (!dateAttribute.includes(futureMonth)) {
           cy.get('[data-name="chevron-right"]').click()
           selectDayFromCurrent()
