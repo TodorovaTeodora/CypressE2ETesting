@@ -1,6 +1,5 @@
-import { table } from "console"
 
-it.only('Web tables', () => {
+it('Web tables', () => {
 cy.visit('/')
 cy.contains('Tables & Data')
 cy.contains('Smart Table').click()
