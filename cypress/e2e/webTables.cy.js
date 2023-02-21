@@ -30,9 +30,8 @@ cy.get('tbody tr').find('td').first().then( tableColumns => {
     cy.wrap(tableColumns).eq(3).should('contain', 'Peterson')
 })
 
-//test what columns appear after we search using the Age filter
-//first we locate the table head, then we iterate over all the table rows of it, and find column Age by index
-
+//test what columns appear after we filter our search by Age input
+//first we locate the table head, then we iterate over all the table rows, and find the column Age by index:
 const age = [20, 30, 40, 200]
 cy.wrap(age).each( age => {
 cy.get('thead [placeholder="Age"]').clear().type(age)
