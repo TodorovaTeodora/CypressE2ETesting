@@ -51,7 +51,7 @@ cy.visit('/')
 cy.contains('Forms').click()
 cy.contains('Datepicker').click()
 
-//first we find the parent element, then the text and the input field, next we click on the input field to be able to select a sate from the calendar
+//first we find the parent element, next we find and click on the input field to be able to select a date from the calendar
 cy.contains('nb-card', 'Common Datepicker').find('input').then( input => {
     cy.wrap(input).click()
     //below is the locator of the whole calendar field
