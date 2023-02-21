@@ -1,4 +1,4 @@
-it.only('assert property', ()=> {
+it('assert property', ()=> {
 
     function selectDayFromCurrent(day) {
 
