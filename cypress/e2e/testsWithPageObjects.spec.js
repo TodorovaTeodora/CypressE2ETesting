@@ -10,13 +10,14 @@ beforeEach('open application', () => {
     cy.visit('/')
 })
 
-it('verify navigations across the pages', ()=> {
+it('verify navigations across the pages', () => {
     navigateTo.formLayoutsPage()
     navigateTo.datepickerPage()
     navigateTo.smartTablePage()
     navigateTo.toolTipPage()
     navigateTo.toasterPage()
 })
+  
 it.only('should submit Inline and Basic form and select tomorrow date in the calendar', () => {
     navigateTo.formLayoutsPage()
     // fill in the Forms
