@@ -1,7 +1,7 @@
 //How to work with radio buttons
 
-it.only('radio button', () => {
-    it.only('assert property', ()=> {
+it('radio button', () => {
+    it('assert property', ()=> {
         cy.visit('/')
         cy.contains('Forms').click()
         cy.contains('Form Layouts').click()
@@ -22,7 +22,6 @@ it.only('radio button', () => {
             .eq(2)
             .check({force: true})
             .should('be.disabled')
-
         })
 
     })
@@ -30,7 +29,7 @@ it.only('radio button', () => {
 
 //How to work with checkboxes
 
-it.only('check boxes', () => {
+it('check boxes', () => {
         cy.visit('/')
         cy.contains('Modal & Overlays').click()
         cy.contains('Toastr').click()
