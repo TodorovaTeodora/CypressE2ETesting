@@ -1,5 +1,6 @@
 it('lists and dropdowns', () => {
     cy.visit('/')
+  
     //  // we use the nav tag as a parent element to locate the child element - select menu where the select button is
     // cy.get('nav nb-select').click()
     // //next we need to locate our selection options, the menu itself is located inside a separate div 
