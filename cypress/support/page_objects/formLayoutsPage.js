@@ -1,13 +1,12 @@
 export class FormLayoutsPage {
 
-
+    //method responsible for the filling of Inline form:
     submitInlineFormWithNameAndEmail (name, email) {
         cy.contains('nb-card', 'Inline form').find('form').then( form => {
             cy.wrap(form).find('[placeholder="Jane Doe"]').type(name)
             cy.wrap(form).find('[placeholder="Email"]').type(email)
-            //remember me checkbox:
+            //locate remember me checkbox and check it:
             cy.wrap(form).find('[type="checkbox"]').check({force: true})
-            //submit method can be used only for a form
             cy.wrap(form).submit()
         })
     }
