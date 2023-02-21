@@ -6,11 +6,11 @@ const { onSmartTablePage } = require("../support/page_objects/smartTablePage");
 
 describe('Test with Page Objects', ()=> {
 
-beforeEach('open application', () => {
+beforeEach('open application', ()=> {
     cy.visit('/')
 })
 
-it('verify navigations across the pages', () => {
+it('verify navigations across the pages', ()=> {
     navigateTo.formLayoutsPage()
     navigateTo.datepickerPage()
     navigateTo.smartTablePage()
