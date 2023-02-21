@@ -18,7 +18,7 @@ it('verify navigations across the pages', ()=> {
     navigateTo.toasterPage()
 })
   
-it.only('should submit Inline and Basic form and select tomorrow date in the calendar', ()=> {
+it('should submit Inline and Basic form and select tomorrow date in the calendar', ()=> {
     navigateTo.formLayoutsPage()
     // fill in the Forms
     onFormLayoutsPage.submitInlineFormWithNameAndEmail('John', 'test@test.com')
