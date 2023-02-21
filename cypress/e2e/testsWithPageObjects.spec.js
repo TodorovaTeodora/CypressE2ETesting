@@ -31,7 +31,6 @@ it.only('should submit Inline and Basic form and select tomorrow date in the cal
     onSmartTablePage.updateAgeByFirstName('Jamie', '30')
     onSmartTablePage.deleteRowByIndex(1)
 
-}
-)
+    })
 
 })
