@@ -14,7 +14,7 @@ it.only('assert property', ()=> {
               cy.get('[data-name="chevron-right"]').click()
               selectDayFromCurrent()
            } else {
-            cy.get('nb-calnedar-day-picker [class="day-cell ng-star-inserted"]').contains(futureDay).click()
+            cy.get('nb-calendar-day-picker [class="day-cell ng-star-inserted"]').contains(futureDay).click()
            }
         })
         return dateAssert
@@ -28,7 +28,7 @@ it.only('assert property', ()=> {
         cy.wrap(input).click()
         let dateAssert = selectDayFromCurrent(1)
         cy.wrap(input).should('have.value', dateAssert)
-        //cy.wrap(input).invoke('prop', 'value').should('contain', dateAssert)
+        //same as the assertion above -> cy.wrap(input).invoke('prop', 'value').should('contain', dateAssert)
         
     })
 
