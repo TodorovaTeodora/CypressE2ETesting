@@ -33,5 +33,4 @@ it('should submit Inline and Basic form and select tomorrow date in the calendar
     onSmartTablePage.deleteRowByIndex(1)
 
     })
-
 })
