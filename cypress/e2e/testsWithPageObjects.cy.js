@@ -22,7 +22,7 @@ it('should submit Inline and Basic form and select tomorrow date in the calendar
     navigateTo.formLayoutsPage()
     // fill in the Forms
     onFormLayoutsPage.submitInlineFormWithNameAndEmail('John', 'test@test.com')
-    onFormLayoutsPage.submitBasicFromWithEmailAndPassword('test@test.com', 'password')
+    onFormLayoutsPage.submitBasicFormWithEmailAndPassword('test@test.com', 'password')
     //Go to datepicker and select the date:
     navigateTo.datepickerPage()
     onDatePickerPage.selectCommonDatepickerDateFromToday(1)
