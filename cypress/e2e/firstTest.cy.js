@@ -1,6 +1,7 @@
 
 it('first test', () => {
 cy.visit('/')
+  
 cy.contains('nb-card', 'Using the Grid').then( firstForm => {
 const emailLabelFirst = firstForm.find('[for="inputEmail1"]').text()
 const passwordLabelFirst = firstForm.find('[for="inputPassword2"]').text()
@@ -11,9 +12,9 @@ cy.contains('nb-card', 'Basic form').then( secondForm => {
     const passwordSecondText = secondForm.find('[for="exampleInputPassword1"]').text()
     expect(passwordLabelFirst).to.equal(passwordSecondText)
     cy.wrap(secondForm).find('[for="emailInputPassword1"]').should('contain', 'Password')
-})
+    })
 
-})
+  })
 
 })
 
@@ -43,10 +44,9 @@ cy.contains('nb-card', 'Basic form')
    .then( classValue => {
     expect(classValue).to.contain('checked')
    })
-
 })
 
-it.only('assert property', ()=> {
+it('assert property', ()=> {
 cy.visit('/')
 cy.contains('Forms').click()
 cy.contains('Datepicker').click()
@@ -59,6 +59,4 @@ cy.contains('nb-card', 'Common Datepicker').find('input').then( input => {
     cy.wrap(input).invoke('prop', 'value').should('contain', 'Feb 17 2023')
 
     })
-
-
 })
