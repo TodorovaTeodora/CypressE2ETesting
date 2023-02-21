@@ -7,7 +7,8 @@ function selectDayFromCurrent(day) {
     let dateAssert = futureMonth + " " + futureDay + ", " + date.getFullYear()
 
     cy.get('nb-calendar-navigation').invoke('attr', 'ng-reflect-date').then( dateAttribute => {
-        //if the future month is not the current one we have to click on the small right arrow to find it
+      
+        //if the month of the future date is not equal the current month, we must click on the small right arrow to find the month
        if (!dateAttribute.includes(futureMonth)) {
           cy.get('[data-name="chevron-right"]').click()
           selectDayFromCurrent()
