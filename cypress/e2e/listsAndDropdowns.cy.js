@@ -1,4 +1,4 @@
-it.only('lists and dropdowns', () => {
+it('lists and dropdowns', () => {
     cy.visit('/')
     //  // we use the nav tag as a parent element to locate the child element - select menu where the select button is
     // cy.get('nav nb-select').click()
@@ -31,11 +31,5 @@ it.only('lists and dropdowns', () => {
                cy.wrap(dropdown).click()
            } 
         })
-
     })
-   
-
-
-
-
 })
