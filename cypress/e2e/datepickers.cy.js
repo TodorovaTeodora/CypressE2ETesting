@@ -8,7 +8,7 @@ it('assert property', ()=> {
         let futureMonth = date.toLocaleString('default', {month: 'short'})
         let dateAssert = futureMonth + " " + futureDay + ", " + date.getFullYear()
 
-        cy.get('nb-calendar-pageable-navigation').invoke('attr', '_nghost-ihd-c82').then( dateAttribute => {
+        cy.get('nb-calendar-navigation').invoke('attr', 'ng-reflect-date').then( dateAttribute => {
     //if the future month is not the current one we have to click on the small right arrow to find it
            if (!dateAttribute.includes(futureMonth)) {
               cy.get('[data-name="chevron-right"]').click()
