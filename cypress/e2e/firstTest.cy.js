@@ -9,7 +9,7 @@ expect(emailLabelFirst).to.equal('Email')
 expect(passwordLabelFirst).to.equal('Password')
 
 cy.contains('nb-card', 'Basic form').then( secondForm => {
-    const passwordSecondText = secondForm.find('[for="exampleInputPassword1"]').text()
+    const passwordSecondText = secondForm.find('[for="exampleInputEmail1"]').text()
     expect(passwordLabelFirst).to.equal(passwordSecondText)
     cy.wrap(secondForm).find('[for="emailInputPassword1"]').should('contain', 'Password')
     })
