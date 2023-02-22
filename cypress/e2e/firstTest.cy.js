@@ -55,7 +55,7 @@ cy.contains('Datepicker').click()
 cy.contains('nb-card', 'Common Datepicker').find('input').then( input => {
     cy.wrap(input).click()
     //below is the locator of the whole calendar field
-    cy.get('nb-calendar-date-picker').contains('17').click()
+    cy.get('nb-calendar-day-cell').contains('17').click()
     cy.wrap(input).invoke('prop', 'value').should('contain', 'Feb 17 2023')
 
     })
