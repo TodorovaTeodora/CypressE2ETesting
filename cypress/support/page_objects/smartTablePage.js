@@ -29,4 +29,4 @@ export class SmartTable {
     }
 
 }
-export const onSmartTablePage = new SmartTable();
+export const onSmartTablePage = new SmartTable()
